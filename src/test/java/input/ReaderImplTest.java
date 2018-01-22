@@ -1,9 +1,7 @@
 package input;
 
-import entity.Configuration;
+import entity.Formula;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Samuel Butta
@@ -14,9 +12,9 @@ public class ReaderImplTest {
     public void readInstance() throws Exception {
 
         ReaderImpl reader = new ReaderImpl();
-        Configuration configuration = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/main/resources/data/sat_20_30_100.txt");
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/main/resources/data/sat_20_30_100.txt");
 
-        System.out.println(configuration);
+        System.out.println(formula);
     }
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
  *
  * @author Samuel Butta
  */
-public class Configuration {
+public class Formula {
 
     /**
      * Počet proměnných

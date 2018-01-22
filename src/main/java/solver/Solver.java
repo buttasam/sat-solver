@@ -1,6 +1,6 @@
 package solver;
 
-import entity.Configuration;
+import entity.Formula;
 import entity.Result;
 
 /**
@@ -9,6 +9,6 @@ import entity.Result;
 public interface Solver {
 
 
-    public Result solve(Configuration configuration);
+    public Result solve(Formula formula);
 
 }

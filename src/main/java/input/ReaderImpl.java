@@ -1,6 +1,6 @@
 package input;
 
-import entity.Configuration;
+import entity.Formula;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,25 +13,25 @@ public class ReaderImpl implements Reader {
 
 
     @Override
-    public Configuration readInstance(String filePath) throws IOException {
-        Configuration configuration = new Configuration();
-        Files.lines(Paths.get(filePath)).forEach(l -> processLine(l, configuration));
+    public Formula readInstance(String filePath) throws IOException {
+        Formula formula = new Formula();
+        Files.lines(Paths.get(filePath)).forEach(l -> processLine(l, formula));
 
-        return configuration;
+        return formula;
     }
 
 
-    private void processLine(String line, Configuration configuration) {
+    private void processLine(String line, Formula formula) {
         if (!isComment(line)) {
             switch (line.charAt(0)) {
                 case 'p':
-                    processConfInfo(line, configuration);
+                    processConfInfo(line, formula);
                     break;
                 case 'w':
-                    processValues(line, configuration);
+                    processValues(line, formula);
                     break;
                 default:
-                    processClause(line, configuration);
+                    processClause(line, formula);
                     break;
             }
         }
@@ -41,28 +41,28 @@ public class ReaderImpl implements Reader {
     /**
      * Očekávaný formát "p cnf 20 30"
      */
-    private void processConfInfo(String line, Configuration configuration) {
+    private void processConfInfo(String line, Formula formula) {
         String[] split = line.split(" ");
 
-        configuration.setVariablesCount(Integer.parseInt(split[2]));
-        configuration.setClausesCount(Integer.parseInt(split[3]));
+        formula.setVariablesCount(Integer.parseInt(split[2]));
+        formula.setClausesCount(Integer.parseInt(split[3]));
     }
 
-    private void processValues(String line, Configuration configuration) {
+    private void processValues(String line, Formula formula) {
         String[] split = line.split(" ");
 
         for (int i = 1; i < split.length; i++) {
-            configuration.addVariable(i, Integer.parseInt(split[i]));
+            formula.addVariable(i, Integer.parseInt(split[i]));
         }
     }
 
     /**
      * Očekávaný vstup 17 18 -20 0
      */
-    private void processClause(String line, Configuration configuration) {
+    private void processClause(String line, Formula formula) {
         String[] split = line.split(" ");
 
-        configuration.addClause(Integer.parseInt(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]));
+        formula.addClause(Integer.parseInt(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]));
     }
 
     private boolean isComment(String line) {

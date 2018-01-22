@@ -1,6 +1,6 @@
 package input;
 
-import entity.Configuration;
+import entity.Formula;
 
 import java.io.IOException;
 
@@ -10,6 +10,6 @@ import java.io.IOException;
 public interface Reader {
 
 
-    public Configuration readInstance(String filePath) throws IOException;
+    public Formula readInstance(String filePath) throws IOException;
 
 }
