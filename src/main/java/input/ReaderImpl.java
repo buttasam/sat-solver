@@ -56,7 +56,13 @@ public class ReaderImpl implements Reader {
         }
     }
 
+    /**
+     * Očekávaný vstup 17 18 -20 0
+     */
     private void processClause(String line, Configuration configuration) {
+        String[] split = line.split(" ");
+
+        configuration.addClause(Integer.parseInt(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2]));
     }
 
     private boolean isComment(String line) {
