@@ -69,4 +69,12 @@ public class Formula {
     public void setClausesCount(int clausesCount) {
         this.clausesCount = clausesCount;
     }
+
+    public int[] getVariables() {
+        return variables;
+    }
+
+    public Clause[] getClauses() {
+        return clauses;
+    }
 }
