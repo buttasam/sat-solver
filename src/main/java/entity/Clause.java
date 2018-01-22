@@ -6,7 +6,7 @@ package entity;
 public class Clause {
 
 
-    private Variable[] variables = new Variable[3];
+    private int[] variables = new int[3];
 
 
 
