@@ -10,31 +10,46 @@ import entity.Solution;
 public class BruteforceSolver implements Solver {
 
 
-    private int bestRating[];
-    private int bestWeight;
-
-
     @Override
     public Result solve(Formula formula) {
+        int bestWeight = 0;
 
-        for(int i = 0; i < 10; i++) {
-            Solution solution = new Solution(formula);
-            solution.setRandomRating();
+        Solution solution = new Solution(formula);
 
-            System.out.print(solution.evaluateIsTrue() + " | ");
-            for(int j = 1; j < solution.getRating().length; j++) {
-                System.out.print(solution.getRating()[j]);
+        boolean[] tmpRating = new boolean[formula.getVariablesCount() + 1];
+
+        /**
+         * vytvoreni vsech permutaci
+         *
+         * zdroj: http://www.geeksforgeeks.org/finding-all-subsets-of-a-given-set-in-java/
+         */
+        for (long i = 0; i < ((long) 1 << formula.getVariablesCount()); i++) {
+            int tmpRatingIndex = 1;
+            for (int j = 0; j < formula.getVariablesCount(); j++) {
+                tmpRating[tmpRatingIndex] = ((i & (1 << j)) > 0);
+                //System.out.print(tmpRating[tmpRatingIndex] ? "1" : "0");
+                tmpRatingIndex++;
             }
+            //System.out.println("|" + solution.evaluateWeight());
 
-            System.out.println(" | " + solution.evaluateWeight());
-
-
-            //System.out.println(solution.getRating());
+            // vypočítání dané permutace
+            bestWeight = calculateBestWeight(solution, tmpRating, bestWeight);
         }
 
-
-        return null;
+        return new Result(bestWeight);
     }
 
+
+    public int calculateBestWeight(Solution solution, boolean[] tmpRating, int bestWeight) {
+        solution.setRating(tmpRating);
+        if (solution.evaluateIsTrue()) {
+            int evaluatedWeight = solution.evaluateWeight();
+            if (evaluatedWeight > bestWeight) {
+                bestWeight = evaluatedWeight;
+            }
+        }
+
+        return bestWeight;
+    }
 
 }

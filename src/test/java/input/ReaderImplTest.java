@@ -12,7 +12,7 @@ public class ReaderImplTest {
     public void readInstance() throws Exception {
 
         ReaderImpl reader = new ReaderImpl();
-        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/main/resources/data/sat_20_30_100.txt");
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_20_30_100.txt");
 
         System.out.println(formula);
     }

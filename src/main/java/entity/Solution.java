@@ -72,4 +72,9 @@ public class Solution {
             return !rating[(-1) * variable];
         }
     }
+
+
+    public void setRating(boolean[] rating) {
+        this.rating = rating;
+    }
 }
