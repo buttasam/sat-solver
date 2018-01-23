@@ -1,10 +1,12 @@
 package input;
 
 import entity.Formula;
+import entity.Result;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.stream.Collectors;
 
 /**
  * @author Samuel Butta
@@ -18,6 +20,13 @@ public class ReaderImpl implements Reader {
         Files.lines(Paths.get(filePath)).forEach(l -> processLine(l, formula));
 
         return formula;
+    }
+
+    @Override
+    public Result readResult(String filePath) throws IOException {
+        String firstLine = Files.lines(Paths.get(filePath)).collect(Collectors.toList()).get(0);
+
+        return new Result(Integer.parseInt(firstLine));
     }
 
 
