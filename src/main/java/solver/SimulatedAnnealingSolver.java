@@ -3,6 +3,7 @@ package solver;
 import entity.Formula;
 import entity.Result;
 import entity.Solution;
+import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.SerializationUtils;
 
 /**
@@ -20,10 +21,10 @@ public class SimulatedAnnealingSolver implements Solver {
     private final int STEPS;
 
     public SimulatedAnnealingSolver() {
-        INIT_TEMPERATURE = 200;
+        INIT_TEMPERATURE = 500;
         FINAL_TEMP = 10;
-        COOLING_CONSTANT = 0.8;
-        STEPS = 100;
+        COOLING_CONSTANT = 0.9;
+        STEPS = 1000;
     }
 
     public SimulatedAnnealingSolver(double INIT_TEMPERATURE, double FINAL_TEMP, double COOLING_CONSTANT, int STEPS) {
@@ -41,34 +42,57 @@ public class SimulatedAnnealingSolver implements Solver {
         double temperature = INIT_TEMPERATURE;
         // náhodné řešení
         oldSolution = new Solution(formula);
-        oldSolution.setRandomRating();
+        oldSolution.setRandomTrueRating();
+
+        int globalMax = oldSolution.evaluateWeight();
 
         while (!frozen(temperature)) {
 
             for (int i = 0; i < STEPS; i++) {
                 newSolution = SerializationUtils.clone(oldSolution);
                 newSolution.setNeighbourRating();
-                System.out.println(oldSolution + "(" + oldSolution.evaluateWeight() + ")" + " | " + newSolution + "(" + newSolution.evaluateWeight() + ")");
+                //System.out.println(oldSolution + "(" + oldSolution.evaluateWeight() + ")" + " | " + newSolution + "(" + newSolution.evaluateWeight() + ")");
 
                 oldSolution = acceptance(oldSolution, newSolution, temperature);
+
+                if(oldSolution.evaluateIsTrue() && oldSolution.evaluateWeight() > globalMax) {
+                    globalMax = oldSolution.evaluateWeight();
+                }
             }
 
             // ochlazení teploty
             temperature = coolTemperature(temperature);
         }
 
-        return null;
+        return new Result(globalMax);
     }
 
     private Solution acceptance(Solution oldSolution, Solution newSolution, double temperature) {
-        // přijetí lepšího
         int oldWeight = oldSolution.evaluateWeight();
         int newWeight = newSolution.evaluateWeight();
 
-        // TODO pravdivost formule
-        if (newWeight > oldWeight) {
+        boolean oldIsTrue = oldSolution.evaluateIsTrue();
+        boolean newIsTrue = newSolution.evaluateIsTrue();
+        //System.out.println(oldIsTrue + " " + newIsTrue);
+
+
+        // přijetí lepšího řešení
+        if ((!oldIsTrue && newIsTrue) ||
+                ((oldIsTrue && newIsTrue) && (newWeight > oldWeight)) ||
+                (!oldIsTrue && !newIsTrue)
+                ) {
             return newSolution;
         }
+
+        // přijetí horšího řešení
+        double exponent = (oldWeight - newWeight) / temperature;
+        double a = Math.exp((-1) * exponent);
+        if (RandomUtils.nextDouble(0, 1) > a) {
+            //accept
+            return newSolution;
+        }
+
+
         return oldSolution;
     }
 

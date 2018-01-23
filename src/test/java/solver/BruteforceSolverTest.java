@@ -6,8 +6,6 @@ import input.ReaderImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author Samuel Butta
  */
@@ -60,6 +58,46 @@ public class BruteforceSolverTest {
         Result result = solver.solve(formula);
 
         Assert.assertEquals(818, result.getBestWeight());
+    }
+
+    @Test
+    public void solve_30_40_100() throws Exception {
+        ReaderImpl reader = new ReaderImpl();
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_30_40_100.txt");
+
+        BruteforceSolver solver = new BruteforceSolver();
+        Result result = solver.solve(formula);
+
+    }
+
+    @Test
+    public void solve_20_40_100() throws Exception {
+        ReaderImpl reader = new ReaderImpl();
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_20_40_100.txt");
+
+        BruteforceSolver solver = new BruteforceSolver();
+        Result result = solver.solve(formula);
+        System.out.println(result.getBestWeight());
+    }
+
+    @Test
+    public void solve_22_40_100() throws Exception {
+        ReaderImpl reader = new ReaderImpl();
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_22_40_100.txt");
+
+        BruteforceSolver solver = new BruteforceSolver();
+        Result result = solver.solve(formula);
+        System.out.println(result.getBestWeight());
+    }
+
+    @Test
+    public void solve_25_40_100() throws Exception {
+        ReaderImpl reader = new ReaderImpl();
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_25_40_100.txt");
+
+        BruteforceSolver solver = new BruteforceSolver();
+        Result result = solver.solve(formula);
+        System.out.println(result.getBestWeight());
     }
 
 

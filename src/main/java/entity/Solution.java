@@ -83,4 +83,10 @@ public class Solution implements Serializable {
         int changedIndex = RandomUtils.nextInt(0, formula.getVariablesCount() + 1); // měněný index ohodnocení
         rating[changedIndex] = !rating[changedIndex];
     }
+
+    public void setRandomTrueRating() {
+        do {
+            setRandomRating();
+        } while(!evaluateIsTrue());
+    }
 }
