@@ -79,7 +79,7 @@ public class SimulatedAnnealingSolver implements Solver {
         // přijetí lepšího řešení
         if ((!oldIsTrue && newIsTrue) ||
                 ((oldIsTrue && newIsTrue) && (newWeight > oldWeight)) ||
-                (!oldIsTrue && !newIsTrue)
+                (!oldIsTrue && !newIsTrue && (newWeight > oldWeight))
                 ) {
             return newSolution;
         }
@@ -88,7 +88,6 @@ public class SimulatedAnnealingSolver implements Solver {
         double exponent = (oldWeight - newWeight) / temperature;
         double a = Math.exp((-1) * exponent);
         if (RandomUtils.nextDouble(0, 1) > a) {
-            //accept
             return newSolution;
         }
 

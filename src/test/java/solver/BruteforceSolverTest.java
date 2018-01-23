@@ -6,10 +6,48 @@ import input.ReaderImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @author Samuel Butta
  */
 public class BruteforceSolverTest {
+
+
+    @Test
+    public void solveAllFiles() throws Exception {
+
+        String mainPath = "/home/samik/IdeaProjects/sat-solver/script/";
+
+        for (int i = 5; i < 26; i += 2) {
+
+            List<Path> files = Files.list(Paths.get(mainPath + i + "/data")).collect(Collectors.toList());
+            for (Path file : files) {
+                // řešení
+                ReaderImpl reader = new ReaderImpl();
+                Formula formula = reader.readInstance(mainPath + i + "/data/" + file.getFileName());
+                BruteforceSolver solver = new BruteforceSolver();
+                Result result = solver.solve(formula);
+
+                // zapsani vysledku
+                BufferedWriter out = new BufferedWriter(new FileWriter(mainPath + i + "/result/" + file.getFileName()));
+                try {
+                    out.write(result.getBestWeight() + "\n");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    out.close();
+                }
+            }
+        }
+    }
 
 
     @Test
@@ -23,7 +61,6 @@ public class BruteforceSolverTest {
         Result result = solver.solve(formula);
         Assert.assertEquals(498, result.getBestWeight());
     }
-
 
 
     @Test
