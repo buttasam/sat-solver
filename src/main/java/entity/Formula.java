@@ -1,5 +1,6 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -7,7 +8,7 @@ import java.util.List;
  *
  * @author Samuel Butta
  */
-public class Formula {
+public class Formula implements Serializable {
 
     /**
      * Počet proměnných

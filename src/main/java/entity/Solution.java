@@ -1,12 +1,15 @@
 package entity;
 
 
+import org.apache.commons.lang3.RandomUtils;
+
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * @author Samuel Butta
  */
-public class Solution {
+public class Solution implements Serializable {
 
     /**
      * Ohodnocení proměnných
@@ -24,9 +27,7 @@ public class Solution {
     public void setRandomRating() {
         Random random = new Random();
         for (int i = 1; i <= formula.getVariablesCount(); i++) {
-            if (random.nextInt() % 2 == 0) {
-                rating[i] = true;
-            }
+            rating[i] = (random.nextInt() % 2 == 0);
         }
     }
 
@@ -37,8 +38,8 @@ public class Solution {
 
     public int evaluateWeight() {
         int weight = 0;
-        for(int i = 1; i <= formula.getVariablesCount(); i++) {
-            if(rating[i]) {
+        for (int i = 1; i <= formula.getVariablesCount(); i++) {
+            if (rating[i]) {
                 weight += formula.getVariables()[i];
             }
         }
@@ -49,7 +50,7 @@ public class Solution {
     public boolean evaluateIsTrue() {
         for (int i = 1; i <= formula.getClausesCount(); i++) {
             Clause clause = formula.getClauses()[i];
-            if(!evaluateClauseIsTrue(clause)) {
+            if (!evaluateClauseIsTrue(clause)) {
                 return false;
             }
         }
@@ -76,5 +77,10 @@ public class Solution {
 
     public void setRating(boolean[] rating) {
         this.rating = rating;
+    }
+
+    public void setNeighbourRating() {
+        int changedIndex = RandomUtils.nextInt(0, formula.getVariablesCount() + 1); // měněný index ohodnocení
+        rating[changedIndex] = !rating[changedIndex];
     }
 }

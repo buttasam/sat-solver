@@ -1,9 +1,11 @@
 package entity;
 
+import java.io.Serializable;
+
 /**
  * @author Samuel Butta
  */
-public class Clause {
+public class Clause implements Serializable {
 
     private int x1, x2, x3;
 
