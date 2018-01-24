@@ -45,7 +45,7 @@ public class SolverInfoTest {
     public void runningTime() throws Exception {
         SolverInfo solverInfo = new SolverInfo();
 
-        long time = solverInfo.runningTime(new SimulatedAnnealingSolver(), "/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_10_15_100.txt");
+        double time = solverInfo.runningTime(new SimulatedAnnealingSolver(), "/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_10_15_100.txt", 1);
         System.out.println(time);
     }
 

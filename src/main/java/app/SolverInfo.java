@@ -14,17 +14,24 @@ import java.nio.file.Paths;
  */
 public class SolverInfo {
 
+
+    // Udává počet opakování výpočtu z kterého se následně vypočítá aritmetický průměr
+    private static final int MEASURE_SIZE = 10;
     private ReaderImpl reader = new ReaderImpl();
 
 
-    public long runningTime(Solver solver, String inputFile) throws IOException {
+    public double runningTime(Solver solver, String inputFile, int measureSize) throws IOException {
         Formula formula = reader.readInstance(inputFile);
 
-        long startTime = System.currentTimeMillis();
-        solver.solve(formula);
-        long endTime = System.currentTimeMillis();
+        double runningTimeAverage = 0;
+        for(int i = 0; i < measureSize; i++) {
+            long startTime = System.currentTimeMillis();
+            solver.solve(formula);
+            long endTime = System.currentTimeMillis();
+            runningTimeAverage += (endTime - startTime) / measureSize;
+        }
 
-        return endTime - startTime;
+        return runningTimeAverage;
     }
 
 
@@ -40,7 +47,7 @@ public class SolverInfo {
     public double averageRunningTime(Solver solver, String inputDirectory) throws IOException {
         long[] times = Files.list(Paths.get(inputDirectory)).map(f -> {
             try {
-                return runningTime(solver, f.toString());
+                return runningTime(solver, f.toString(), MEASURE_SIZE);
             } catch (IOException e) {
                 e.printStackTrace();
                 return 0;
