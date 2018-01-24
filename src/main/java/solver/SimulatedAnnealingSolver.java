@@ -24,7 +24,7 @@ public class SimulatedAnnealingSolver implements Solver {
         INIT_TEMPERATURE = 500;
         FINAL_TEMP = 10;
         COOLING_CONSTANT = 0.9;
-        STEPS = 1000;
+        STEPS = 100;
     }
 
     public SimulatedAnnealingSolver(double INIT_TEMPERATURE, double FINAL_TEMP, double COOLING_CONSTANT, int STEPS) {
