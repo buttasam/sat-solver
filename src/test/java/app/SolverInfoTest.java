@@ -26,7 +26,7 @@ public class SolverInfoTest {
 
         String inputFile = "/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_25_40_100.txt";
         String resultFile = "/home/samik/IdeaProjects/sat-solver/src/test/resources/result/sat_25_40_100.txt";
-        double error = solverInfo.error(new SimulatedAnnealingSolver(), inputFile, resultFile);
+        double error = solverInfo.error(new SimulatedAnnealingSolver(), inputFile, resultFile, 1);
         System.out.println(error);
     }
 
@@ -36,7 +36,7 @@ public class SolverInfoTest {
 
         String inputFile = "/home/samik/IdeaProjects/sat-solver/src/test/resources/data/sat_3_3_100.txt";
         String resultFile = "/home/samik/IdeaProjects/sat-solver/src/test/resources/result/sat_3_3_100.txt";
-        double error = solverInfo.error(new SimulatedAnnealingSolver(), inputFile, resultFile);
+        double error = solverInfo.error(new SimulatedAnnealingSolver(), inputFile, resultFile, 1);
         System.out.println(error);
     }
 

@@ -23,25 +23,29 @@ public class SolverInfo {
     public double runningTime(Solver solver, String inputFile, int measureSize) throws IOException {
         Formula formula = reader.readInstance(inputFile);
 
-        double runningTimeAverage = 0;
+        double runningTimeSum = 0;
         for(int i = 0; i < measureSize; i++) {
             long startTime = System.currentTimeMillis();
             solver.solve(formula);
             long endTime = System.currentTimeMillis();
-            runningTimeAverage += (endTime - startTime) / measureSize;
+            runningTimeSum += (endTime - startTime);
         }
 
-        return runningTimeAverage;
+        return runningTimeSum / measureSize;
     }
 
 
-    public double error(Solver solver, String inputFile, String resultFile) throws IOException {
+    public double error(Solver solver, String inputFile, String resultFile, int measureSize) throws IOException {
         Formula formula = reader.readInstance(inputFile);
-
-        Result result = solver.solve(formula);
         Result expectedResult = reader.readResult(resultFile);
 
-        return (double) (expectedResult.getBestWeight() - result.getBestWeight()) / expectedResult.getBestWeight();
+        double errorSum = 0;
+        for(int i = 0; i < measureSize; i++) {
+            Result result = solver.solve(formula);
+            errorSum += (double) (expectedResult.getBestWeight() - result.getBestWeight()) / expectedResult.getBestWeight();
+        }
+
+        return errorSum / measureSize;
     }
 
     public double averageRunningTime(Solver solver, String inputDirectory) throws IOException {
