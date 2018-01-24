@@ -70,7 +70,6 @@ public class SolverInfo {
             try {
                 String resultFile = f.toString().replaceFirst("data", "result");
                 double error = error(solver, f.toString(), resultFile, MEASURE_SIZE);
-                System.out.println(resultFile + " " + error);
                 return error;
             } catch (IOException e) {
                 e.printStackTrace();
