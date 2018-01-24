@@ -58,4 +58,29 @@ public class MeasureTest {
         }
     }
 
+
+    @Test
+    public void time_coolingConstant() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+
+        String inputDirectory = "/home/samik/IdeaProjects/sat-solver/script/25/data";
+
+        for(double i = 0.1; i <= 0.9; i += 0.1) {
+            double avg = solverInfo.averageRunningTime(new SimulatedAnnealingSolver(500, 10, i, 100), inputDirectory);
+            System.out.println(i + "         " + avg);
+        }
+    }
+
+    @Test
+    public void error_coolingConstant() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+
+        String inputDirectory = "/home/samik/IdeaProjects/sat-solver/script/25/data";
+
+        for(double i = 0.1; i <= 0.9; i += 0.1) {
+            double avg = solverInfo.averageErrorTime(new SimulatedAnnealingSolver(500, 10, i, 100), inputDirectory);
+            System.out.println(i + "         " + avg);
+        }
+    }
+
 }
