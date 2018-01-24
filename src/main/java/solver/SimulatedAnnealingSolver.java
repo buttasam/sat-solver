@@ -55,7 +55,7 @@ public class SimulatedAnnealingSolver implements Solver {
 
                 oldSolution = acceptance(oldSolution, newSolution, temperature);
 
-                if(oldSolution.evaluateIsTrue() && oldSolution.evaluateWeight() > globalMax) {
+                if (oldSolution.evaluateIsTrue() && oldSolution.evaluateWeight() > globalMax) {
                     globalMax = oldSolution.evaluateWeight();
                 }
             }

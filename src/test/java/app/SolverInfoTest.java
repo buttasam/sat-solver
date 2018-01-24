@@ -11,6 +11,16 @@ import static org.junit.Assert.*;
 public class SolverInfoTest {
 
     @Test
+    public void averageErrorTime() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+
+        String inputDirectory = "/home/samik/IdeaProjects/sat-solver/script/21/data";
+        double avg = solverInfo.averageErrorTime(new SimulatedAnnealingSolver(), inputDirectory);
+
+        System.out.println(avg);
+    }
+
+    @Test
     public void averageRunningTime() throws Exception {
         SolverInfo solverInfo = new SolverInfo();
 

@@ -24,7 +24,7 @@ public class SolverInfo {
         Formula formula = reader.readInstance(inputFile);
 
         double runningTimeSum = 0;
-        for(int i = 0; i < measureSize; i++) {
+        for (int i = 0; i < measureSize; i++) {
             long startTime = System.currentTimeMillis();
             solver.solve(formula);
             long endTime = System.currentTimeMillis();
@@ -40,7 +40,7 @@ public class SolverInfo {
         Result expectedResult = reader.readResult(resultFile);
 
         double errorSum = 0;
-        for(int i = 0; i < measureSize; i++) {
+        for (int i = 0; i < measureSize; i++) {
             Result result = solver.solve(formula);
             errorSum += (double) (expectedResult.getBestWeight() - result.getBestWeight()) / expectedResult.getBestWeight();
         }
@@ -64,10 +64,39 @@ public class SolverInfo {
         return (double) sum / count;
     }
 
+
+    public double averageErrorTime(Solver solver, String inputDirectory) throws IOException {
+        double[] errors = Files.list(Paths.get(inputDirectory)).map(f -> {
+            try {
+                String resultFile = f.toString().replaceFirst("data", "result");
+                double error = error(solver, f.toString(), resultFile, MEASURE_SIZE);
+                System.out.println(resultFile + " " + error);
+                return error;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return 0;
+            }
+        }).mapToDouble(d -> d.doubleValue()).toArray();
+
+        double sum = sumDoubleArray(errors);
+        int count = errors.length;
+
+        return sum / count;
+    }
+
+
     private long sumLongArray(long[] array) {
-        int sum = 0;
-        for (long l: array) {
+        long sum = 0;
+        for (long l : array) {
             sum += l;
+        }
+        return sum;
+    }
+
+    private double sumDoubleArray(double[] array) {
+        double sum = 0;
+        for (double d : array) {
+            sum += d;
         }
         return sum;
     }
