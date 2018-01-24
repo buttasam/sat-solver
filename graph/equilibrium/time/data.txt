@@ -1,0 +1,10 @@
+# This file is called   force.dat
+# Force-Deflection data for a beam and a bar
+# x    y
+1         139.45
+2         265.4
+3         382.35
+4         512.65
+5         648.6
+6         779.95
+7         897.9

@@ -83,4 +83,28 @@ public class MeasureTest {
         }
     }
 
+
+    @Test
+    public void time_equilibrium() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+        String inputDirectory = "/home/samik/IdeaProjects/sat-solver/script/25/data";
+
+        for(int i = 1; i <= 10; i ++) {
+            double avg = solverInfo.averageRunningTime(new SimulatedAnnealingSolver(500, 10, 0.9, i * 40), inputDirectory);
+            System.out.println(i + "         " + avg);
+        }
+    }
+
+
+    @Test
+    public void error_equilibrium() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+        String inputDirectory = "/home/samik/IdeaProjects/sat-solver/script/25/data";
+
+        for(int i = 1; i <= 10; i ++) {
+            double avg = solverInfo.averageErrorTime(new SimulatedAnnealingSolver(500, 10, 0.9, i * 40), inputDirectory);
+            System.out.println(i + "         " + avg);
+        }
+    }
+
 }
