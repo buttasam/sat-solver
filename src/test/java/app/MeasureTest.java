@@ -107,4 +107,31 @@ public class MeasureTest {
         }
     }
 
+
+    @Test
+    public void final_time() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+
+        for(int i = 5; i <= 25; i += 2) {
+            double avg = solverInfo.averageRunningTime(new SimulatedAnnealingSolver(350, 65, 0.85, 40 * 8), "/home/samik/IdeaProjects/sat-solver/script/" + i + "/data");
+            System.out.println(i + "         " + avg);
+        }
+
+    }
+
+
+
+    @Test
+    public void final_error() throws Exception {
+        SolverInfo solverInfo = new SolverInfo();
+
+        for(int i = 5; i <= 25; i += 2) {
+            double avg = solverInfo.averageErrorTime(new SimulatedAnnealingSolver(350, 65, 0.85, 40 * 8), "/home/samik/IdeaProjects/sat-solver/script/" + i + "/data");
+            System.out.println(i + "         " + avg);
+        }
+
+    }
+
+
+
 }
