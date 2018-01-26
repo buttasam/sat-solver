@@ -35,4 +35,15 @@ public class SimulatedAnnealingSolverTest {
     }
 
 
+    @Test
+    public void solve_100_500_100() throws Exception {
+        ReaderImpl reader = new ReaderImpl();
+        Formula formula = reader.readInstance("/home/samik/IdeaProjects/sat-solver/script/200/data/1");
+
+        SimulatedAnnealingSolver solver = new SimulatedAnnealingSolver(350, 65, 0.85, 200 * 5);
+        Result result = solver.solve(formula);
+        System.out.println(result.getBestWeight());
+    }
+
+
 }

@@ -35,31 +35,31 @@
 </g>
 <g style="fill:none; color:black; stroke:currentColor; stroke-width:1.00; stroke-linecap:butt; stroke-linejoin:miter">
 	<path stroke='black'  d='M60.5,252.0 L68.0,252.0 M378.9,252.0 L371.4,252.0  h0.01'/>	<g transform="translate(53.5,255.7)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
-		<text><tspan>0.04</tspan></text>
-	</g>
-	<path stroke='black'  d='M60.5,226.1 L68.0,226.1 M378.9,226.1 L371.4,226.1  h0.01'/>	<g transform="translate(53.5,229.8)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.05</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,200.3 L68.0,200.3 M378.9,200.3 L371.4,200.3  h0.01'/>	<g transform="translate(53.5,204.0)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,226.1 L68.0,226.1 M378.9,226.1 L371.4,226.1  h0.01'/>	<g transform="translate(53.5,229.8)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.06</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,174.4 L68.0,174.4 M378.9,174.4 L371.4,174.4  h0.01'/>	<g transform="translate(53.5,178.1)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,200.3 L68.0,200.3 M378.9,200.3 L371.4,200.3  h0.01'/>	<g transform="translate(53.5,204.0)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.07</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,148.5 L68.0,148.5 M378.9,148.5 L371.4,148.5  h0.01'/>	<g transform="translate(53.5,152.2)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,174.4 L68.0,174.4 M378.9,174.4 L371.4,174.4  h0.01'/>	<g transform="translate(53.5,178.1)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.08</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,122.7 L68.0,122.7 M378.9,122.7 L371.4,122.7  h0.01'/>	<g transform="translate(53.5,126.4)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,148.6 L68.0,148.6 M378.9,148.6 L371.4,148.6  h0.01'/>	<g transform="translate(53.5,152.3)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.09</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,96.8 L68.0,96.8 M378.9,96.8 L371.4,96.8  h0.01'/>	<g transform="translate(53.5,100.5)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,122.7 L68.0,122.7 M378.9,122.7 L371.4,122.7  h0.01'/>	<g transform="translate(53.5,126.4)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.1</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,71.0 L68.0,71.0 M378.9,71.0 L371.4,71.0  h0.01'/>	<g transform="translate(53.5,74.7)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,96.8 L68.0,96.8 M378.9,96.8 L371.4,96.8  h0.01'/>	<g transform="translate(53.5,100.5)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.11</tspan></text>
 	</g>
-	<path stroke='black'  d='M60.5,45.1 L68.0,45.1 M378.9,45.1 L371.4,45.1  h0.01'/>	<g transform="translate(53.5,48.8)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+	<path stroke='black'  d='M60.5,71.0 L68.0,71.0 M378.9,71.0 L371.4,71.0  h0.01'/>	<g transform="translate(53.5,74.7)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>0.12</tspan></text>
+	</g>
+	<path stroke='black'  d='M60.5,45.1 L68.0,45.1 M378.9,45.1 L371.4,45.1  h0.01'/>	<g transform="translate(53.5,48.8)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
+		<text><tspan>0.13</tspan></text>
 	</g>
 	<path stroke='black'  d='M60.5,252.0 L60.5,244.5 M60.5,45.1 L60.5,52.6  h0.01'/>	<g transform="translate(60.5,270.7)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:middle">
 		<text><tspan>1</tspan></text>
@@ -106,17 +106,17 @@
 	<g transform="translate(322.4,240.7)" style="stroke:none; fill:black; font-family:arial; font-size:10.00pt; text-anchor:end">
 		<text><tspan>25 proměnných 40 klauzulí</tspan></text>
 	</g>
-	<path  d='M329.4,237.0 L364.9,237.0 M60.5,59.2 L95.9,164.4 L131.3,182.8 L166.6,183.0 L202.0,218.4 L237.4,209.3 
-		L272.8,231.1 L308.1,242.5 L343.5,251.4 L378.9,249.3  h0.01'/>	<use xlink:href='#gpPt0' transform='translate(60.5,59.2) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(95.9,164.4) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(131.3,182.8) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(166.6,183.0) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(202.0,218.4) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(237.4,209.3) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(272.8,231.1) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(308.1,242.5) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(343.5,251.4) scale(3.75)'/>
-	<use xlink:href='#gpPt0' transform='translate(378.9,249.3) scale(3.75)'/>
+	<path  d='M329.4,237.0 L364.9,237.0 M60.5,55.6 L95.9,119.8 L131.3,175.2 L166.6,187.2 L202.0,201.6 L237.4,213.3 
+		L272.8,219.4 L308.1,237.6 L343.5,233.1 L378.9,251.0  h0.01'/>	<use xlink:href='#gpPt0' transform='translate(60.5,55.6) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(95.9,119.8) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(131.3,175.2) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(166.6,187.2) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(202.0,201.6) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(237.4,213.3) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(272.8,219.4) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(308.1,237.6) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(343.5,233.1) scale(3.75)'/>
+	<use xlink:href='#gpPt0' transform='translate(378.9,251.0) scale(3.75)'/>
 	<use xlink:href='#gpPt0' transform='translate(347.1,237.0) scale(3.75)'/>
 </g>
 	</g>

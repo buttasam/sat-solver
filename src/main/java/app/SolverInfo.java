@@ -16,8 +16,17 @@ public class SolverInfo {
 
 
     // Udává počet opakování výpočtu z kterého se následně vypočítá aritmetický průměr
-    private static final int MEASURE_SIZE = 10;
+    private final int MEASURE_SIZE;
     private ReaderImpl reader = new ReaderImpl();
+
+
+    public SolverInfo() {
+        MEASURE_SIZE = 10;
+    }
+
+    public SolverInfo(int MEASURE_SIZE) {
+        this.MEASURE_SIZE = MEASURE_SIZE;
+    }
 
 
     public double runningTime(Solver solver, String inputFile, int measureSize) throws IOException {

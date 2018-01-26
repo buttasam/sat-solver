@@ -85,8 +85,12 @@ public class Solution implements Serializable {
     }
 
     public void setRandomTrueRating() {
-        do {
+        for(int i = 0; i < 1000; i++) {
             setRandomRating();
-        } while(!evaluateIsTrue());
+
+            if(evaluateIsTrue()) {
+                return;
+            }
+        }
     }
 }

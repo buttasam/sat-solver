@@ -4,7 +4,7 @@ set output 'out.svg'
 
 # Key means label...
 set key inside bottom right
-set xlabel 'Equilibrium'
-set ylabel 'Doba běhu (ms)'
-set title 'Závislost doby běhu na velikosti equilibria'
-plot "data.txt" using 1:2 title '25 proměnných 40 klauzulí' with linespoints
+set xlabel 'Počet proměnných'
+set ylabel 'Době běhu (ms)'
+set title 'Závislost doby běhu na počtu proměnných ve formuli'
+plot "data.txt" using 1:2 title '500 klauzulí' with linespoints
